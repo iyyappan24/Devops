@@ -24,4 +24,13 @@ public class StudentControllerTest {
                 .andExpect(MockMvcResultMatchers.content().string("This is from Jenkins"));
     }
 
+
+    @Test
+    public void getTest() throws Exception{
+
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/get"))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
 }
