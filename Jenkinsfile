@@ -1,14 +1,14 @@
 pipeline {
     agent any
     triggers {
-         pollSCM ignorePostCommitHooks: true, scmpoll_spec: '* * * * * '
+         pollSCM scmpoll_spec: '* * * * * '
     }
 
     stages {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', url: 'https://github.com/iyyappan24/Devops.git'
+                //git branch: 'main', url: 'https://github.com/iyyappan24/Devops.git'
 
                 // To run Maven on a Windows agent, use
                 bat 'mvn -Dmaven.test.failure.ignore=true clean compile test package'
