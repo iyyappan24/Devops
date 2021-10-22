@@ -35,7 +35,7 @@ public class StudentControllerTest {
     
 
     @Test
-    public void getTest() throws Exception{
+    public void get() throws Exception{
 
 
         mockMvc.perform(MockMvcRequestBuilders.get("/get"))
