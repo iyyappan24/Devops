@@ -1,15 +1,13 @@
 pipeline {
     agent any
+    
     triggers {
-        pollSCM('* * * * *')
+        pollSCM '* * * * *'
     }
 
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                //git branch: 'main', url: 'https://github.com/iyyappan24/Devops.git'
-
                 // To run Maven on a Windows agent, use
                 bat 'mvn -Dmaven.test.failure.ignore=true clean compile test package'
             }
