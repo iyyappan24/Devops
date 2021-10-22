@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-         pollSCM scmpoll_spec: '* * * * * '
+        pollSCM '* * * * *'
     }
 
     stages {
